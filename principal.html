@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Bienvenido paytableCalculator
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesview.css" />
+</head>
+
+<body>
+
+  <header>
+    <div>Método francés</div>
+    <div class="userTarget">
+      <img src="assets/img/usuario.png" alt="Ícono de usuario">
+
+      <nav>
+        <a class="textUser">
+          <?php echo $_SESSION['user']; ?>
+        </a>
+        <ul>
+          <a href="php/cerrar_sesion.php" class="cerrar-sesion">Cerrar sesión</a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="options">
+      <ul>
+        <li class="active">Método francés</li>
+        <li><a href="verTabla.php">Ver tabla</a></li>
+      </ul>
+    </nav>
+
+    <div class="title-container">
+      <h3>Data results</h3>
+    </div>
+
+    <section id="view1" class="view">
+      <div class="table-container">
+        <div class="card1">
+          <div class="in-container">
+            <div class="in-info">
+              <h4>Préstamo</h4>
+              <input id="prestamo" type="number">
+            </div>
+            <div class="in-info">
+              <h4>Tasa</h4>
+              <input id="tasa" type="number">
+            </div>
+            <div class="in-info">
+              <h4>Tipo de tasa</h4>
+              <select id="tipoTasa">
+                <option value="1">Anual</option>
+                <option value="2">Mensual</option>
+                <option value="3">Diaria</option>
+              </select>
+            </div>
+            <div class="in-info">
+              <h4>Tiempo</h4>
+              <input id="tiempo" type="number">
+            </div>
+            <div class="in-info">
+              <h4>Periodo de tiempo</h4>
+              <select id="periodoTiempo">
+                <option value="1">Años</option>
+                <option value="2">Meses</option>
+                <option value="3">Días</option>
+              </select>
+            </div>
+            <div class="in-info">
+              <h4>Tipo de moneda</h4>
+              <select id="tipoMoneda">
+                <option value="1">Soles</option>
+                <option value="2">Dólares</option>
+              </select>
+            </div>
+
+            <!--Mostrar resultados-->
+            <div class="in-info">
+              <h4>Interés final</h4>
+              <div class="int-final"></div>
+              <button id="calcular-int">Calcular Interés</button>
+              <button id="borrar-int">Limpiar</button>
+            </div>
+              
+          </div>
+        </div>
+
+        <div class="card2">
+          <div class="result-container">
+            <div class="result">
+              <h4 id="prim">INTERÉS FINAL</h4>
+              <div class="value"></div>
+            </div>
+            <div class="result">
+              <h4>AMORTIZACIÓN</h4>
+              <div class="value"></div>
+            </div>
+            <div class="result">
+              <h4>VAN</h4>
+              <div class="value"></div>
+            </div>
+            <div class="result">
+              <h4 id="ult">TIR</h4>
+              <div class="value"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="button-container">
+        <button id="calculate-btn" class="calculate">CALCULATE</button>
+        <button id="cancel-btn" class="cancel">DELETE</button>
+      </div>
+    </section>
+
+    <section id="tabla-result" class="view">
+      <div class="card3">
+        <button onclick="gen_table();">CALCULAR</button>
+        <button onclick="borrar_tabla();">BORRAR</button>
+        </fieldset>
+        <hr>
+        <table class="tab">
+            <thead>
+                <tr>
+                    <td>Periodo</td>
+                    <td>Pago</td>
+                    <td>Interés</td>
+                    <td>Amortización</td>
+                    <td>Saldo</td>
+                </tr>
+            </thead>
+            <tbody id="tab">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="ft">TOTAL</td>
+                    <td id="t1"></td>
+                    <td id="t2"></td>
+                    <td id="t3"></td>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <div>Método francés</div>
+    <div>
+      <a href="#" class="social"><span class="circle"><img src="assets/img/twitter_icon.png"></span></a>
+      <a href="#" class="social"><span class="circle"><img src="assets/img/facebook_icon.png"></span></a>
+      <a href="#" class="social"><span class="circle"><img src="assets/img/instagram_icon.png"></span></a>
+      <a href="#" class="social"><span class="circle"><img src="assets/img/linkedin_icon.png"></span></a>
+    </div>
+    <div class="rights">&copy; SV81 - Grupo 2, 2023.</div>
+  </footer>
+
+  <script src="scripttest.js"></script>
+</body>
+
+</html>
