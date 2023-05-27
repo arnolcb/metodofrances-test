@@ -106,15 +106,27 @@
   }
   
   .card1 {
+    /*
+    display: flex;
+    flex-wrap: wrap;
+    */
     width: 50%;
-    display: inline-block;
+    /*display: inline-block;*/
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     justify-content: center;
     backdrop-filter: blur(10px);
     background-color: white;
     border-radius: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
+    /*margin-left: 30px;
+    margin-right: 30px;*/
+  }
+  .card1 .in-info{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .in-info select{
+    margin-left: 10px;
   }
   
   .in-info div.int-final{
@@ -286,6 +298,11 @@ fieldset{
     border-radius: 10px;
     background-color: #d1ddbe;
 }
+
+.card3 {
+  margin-top: 20px;
+}
+
 .card3 button{
     background-color: #fdfef7;
     border: #173441 1.8px solid;
@@ -334,7 +351,7 @@ td{
       rgba(21, 137, 162, 0.95) 74.08%
     );
     color: #fff;
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     width: 100%;
     padding: 20px;

@@ -52,6 +52,13 @@
               <input id="prestamo" type="number">
             </div>
             <div class="in-info">
+              <h4>Tipo de moneda</h4>
+              <select id="tipoMoneda">
+                <option value="1">Soles</option>
+                <option value="2">Dólares</option>
+              </select>
+            </div>
+            <div class="in-info">
               <h4>Tasa</h4>
               <input id="tasa" type="number">
             </div>
@@ -74,21 +81,6 @@
                 <option value="2">Meses</option>
                 <option value="3">Días</option>
               </select>
-            </div>
-            <div class="in-info">
-              <h4>Tipo de moneda</h4>
-              <select id="tipoMoneda">
-                <option value="1">Soles</option>
-                <option value="2">Dólares</option>
-              </select>
-            </div>
-
-            <!--Mostrar resultados-->
-            <div class="in-info">
-              <h4>Interés final</h4>
-              <div class="int-final"></div>
-              <button id="calcular-int">Calcular Interés</button>
-              <button id="borrar-int">Limpiar</button>
             </div>
               
           </div>
@@ -118,15 +110,15 @@
       </div>
 
       <div class="button-container">
-        <button id="calculate-btn" class="calculate">CALCULATE</button>
-        <button id="cancel-btn" class="cancel">DELETE</button>
+        <button id="calculate-btn" class="calculate" onclick="gen_table();">CALCULATE</button>
+        <button id="cancel-btn" class="cancel" onclick="borrar_tabla();">DELETE</button>
       </div>
     </section>
 
     <section id="tabla-result" class="view">
       <div class="card3">
-        <button onclick="gen_table();">CALCULAR</button>
-        <button onclick="borrar_tabla();">BORRAR</button>
+        <!--<button onclick="gen_table();">CALCULAR</button>
+        <button onclick="borrar_tabla();">BORRAR</button>-->
         </fieldset>
         <hr>
         <table class="tab">
